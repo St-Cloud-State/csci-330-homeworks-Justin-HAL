@@ -1,0 +1,61 @@
+Script started on 2025-01-24 00:11:28+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="79" LINES="40"]
+[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* '(QUESTION 3)
+
+(QUESTION 3)
+* '(3 a)
+
+(3 A)
+*     (car (cdr (cdr '(a b x d)))) 
+
+X
+* '(3 B)
+
+(3 B)
+*     (car (car (cdr (car (cdr '(a (b (x d))))))))  
+
+X
+* '(3 c)
+
+(3 C)
+*     (car (car (cdr (car (cdr (car (car '((( a (b (x) d))))))))))) 
+
+X
+* '(QUESTION 4)
+
+(QUESTION 4)
+* '(4 a)
+
+(4 A)
+* (cons 'a (cons 'b (cons 'x (cons 'd NIL)))) 
+
+(A B X D)
+* '(4 b)
+
+(4 B)
+* (cons 'a (cons (cons 'b (cons (cons 'x (cons 'd NIL)) NIL)) NIL)) 
+
+(A (B (X D)))
+* '(4 c)
+
+(4 C)
+* (cons (cons (cons 'a (cons (cons 'b (cons (cons 'x NIL) (cons 'd NIL))) NIL)) NIL) NIL) 
+
+(((A (B (X) D))))
+* ^Z
+[1]+  Stopped                 sbcl
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+There are stopped jobs.
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL [0;36m([1;31mmain[0;36m) [0m$ 
+[K[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-01-24 00:15:18+00:00 [COMMAND_EXIT_CODE="1"]
