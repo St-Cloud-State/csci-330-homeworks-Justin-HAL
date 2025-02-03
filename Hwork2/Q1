@@ -1,0 +1,162 @@
+Script started on 2025-02-03 19:39:55+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="88" LINES="51"]
+[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork2 [0;36m([1;31mmain[0;36m) [0m$ sbcl
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* '(question 3.1)
+
+(QUESTION 3.1)
+* '(evaluates to nil)
+
+(EVALUATES TO NIL)
+* (not (equal 3 (ABS -3)))
+
+NIL
+* '(question 3.2)
+
+(QUESTION 3.2)
+* (/ (+ 8 12) 2)
+
+10
+* '(question 3.3)
+
+(QUESTION 3.3)
+* (+ (* 3 3) (*4 4))
+
+25
+* '(question 3.7)
+
+(QUESTION 3.7)
+* (defun MILES-PER-GALLON (INITIAL-ODOMETER-READING FINAL-ODOMETER-READING GALLONS-CONSUME) (/ (- FINAL-ODOMETER-READING INITIAL-ODOMETER-READING) GALLONS-CONSUME))
+
+MILES-PER-GALLON
+* (MILES-PER-GALLON 0 4 2)
+
+2
+* '(question 3.10)
+
+(QUESTION 3.1)
+* (third (the quick brown fox))
+; in: THIRD (THE QUICK BROWN FOX)
+;     (THE QUICK BROWN FOX)
+; 
+; caught ERROR:
+;   error while parsing arguments to special operator THE:
+;     too many elements in
+;       (QUICK BROWN FOX)
+;     to satisfy lambda list
+;       (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+;     exactly 2 expected, but got 3
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+
+debugger invoked on a SB-INT:COMPILED-PROGRAM-ERROR in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  Execution of a form compiled with errors.
+Form:
+  (THE QUICK BROWN FOX)
+Compile-time error:
+  error while parsing arguments to special operator THE:
+  too many elements in
+    (QUICK BROWN FOX)
+  to satisfy lambda list
+    (SB-C::VALUE-TYPE SB-KERNEL:FORM):
+  exactly 2 expected, but got 3
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (THE QUICK BROWN FOX)
+0] abort
+
+* (third '(the quick brown fox))
+
+BROWN
+* (list 2 and 2 is 4)
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable AND is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV AND #<NULL-LEXENV>)
+0] abort
+
+* (list '2 'and '2 'is '4)
+
+(2 AND 2 IS 4)
+* (cons 'patrick (seymour marvin))
+; in: CONS 'PATRICK
+;     (SEYMOUR MARVIN)
+; 
+; caught WARNING:
+;   undefined variable: MARVIN
+; 
+; caught STYLE-WARNING:
+;   undefined function: SEYMOUR
+; 
+; compilation unit finished
+;   Undefined function:
+;     SEYMOUR
+;   Undefined variable:
+;     MARVIN
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable MARVIN is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+((LAMBDA ()))
+   source: (SEYMOUR MARVIN)
+0] abort
+
+* (cons 'patrick '(seymour marvin)) 
+
+(PATRICK SEYMOUR MARVIN)
+* (cons 'patrick (list seymour marvin))
+
+debugger invoked on a UNBOUND-VARIABLE in thread
+#<THREAD "main thread" RUNNING {9461061}>:
+  The variable SEYMOUR is unbound.
+
+Type HELP for debugger help, or (SB-EXT:EXIT) to exit from SBCL.
+
+restarts (invokable by number or by possibly-abbreviated name):
+  0: [ABORT] Exit debugger, returning to top level.
+
+(SB-INT:SIMPLE-EVAL-IN-LEXENV SEYMOUR #<NULL-LEXENV>)
+0] abort
+
+* (cons 'patrick (list 'seymour 'marvin))
+
+(PATRICK SEYMOUR MARVIN)
+* '(questions 3.20 3.21 and 3.25 answered in Q2)
+
+(QUESTIONS 3.2 3.21 AND 3.25 ANSWERED IN Q2)
+* ^Z
+[1]+  Stopped                 sbcl
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork2 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+There are stopped jobs.
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork2 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-02-03 19:51:05+00:00 [COMMAND_EXIT_CODE="1"]
