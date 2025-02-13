@@ -25,18 +25,24 @@
     )
 )
 
-(defun merge-sort-bottom-up (L)
+(defun sort-bottom-up-helper (L)
 
-        (let ((len (length L))))
-        (cond
         (loop while(< 1 (length L))
             do( 
                 if (listp (car L)) 
                 ;if the first element of L is a list:
-                (setq L (append (part-list L)   (merge-sort-bottom-up (cdr(cdr L)))))
+                (setq L (append (part-list L)   (sort-bottom-up-helper (cdr(cdr L)))))
                 ;if the first element of L is not a list
-                (setq L (append (part-sym L) (merge-sort-bottom-up(cdr (cdr L)))))
+                (setq L (append (part-sym L) (sort-bottom-up-helper(cdr (cdr L)))))
             )
         )
+        (if (listp (car L))
+            L
+            (list L)
         )
+        )
+
+(defun MergeSort (L)
+    (car (sort-bottom-up-helper L))
 )
+
