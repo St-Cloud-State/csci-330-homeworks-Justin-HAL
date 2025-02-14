@@ -43,7 +43,24 @@
 
 ;This is the helper function that does most of the heavy lifting.
 (defun sort-bottom-up-helper (L)
-        ;while there is more than one element(list) in L.
+        ;cond with three outcomes
+        (cond      
+                    ;cond 1 if the length of L is greater than 1, this means there is more than one element.
+                    ((< 1 (length L))
+                    (if (listp (car L))  ;checks to see if the first element of L is a list.
+                        ;if the first element of L is a list:
+                        (setq L (append (part-list L)   (sort-bottom-up-helper (cdr(cdr L))))) ;merge adjacent lists, then move on to the rest of the list
+                        ;if the first element of L is a symbol (not a list)
+                        (setq L (append (part-sym L) (sort-bottom-up-helper(cdr (cdr L))))) ;merge adjacent symbols, then move on to the res of the list
+                    ))
+                     ((listp (car L)) L) ;if the list contain only one element, and that element is a list, return the list.
+                     (t (list L))   ;else, that element must be a symbol, return a list conating that symbol.
+                    ))
+        
+
+;main merge=sort function
+(defun merge-sort (L)
+    ;while there is more than one element(list) in L.
         (loop while(< 1 (length L))
             do( if (listp (car L))  ;checks to see if the first element of L is a list.
                 ;if the first element of L is a list:
@@ -53,15 +70,12 @@
             )
         )
         (if (listp (car L))
+            (car L)
             L
-            (list L)
         )
         )
 
-;main merge=sort function
-(defun merge-sort (L)
-    (car (sort-bottom-up-helper L))
-)
+
 
 ;commands to use to test
 ; (merge-sort '(2 4 6 1 5 3))
