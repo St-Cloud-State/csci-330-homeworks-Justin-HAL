@@ -1,7 +1,6 @@
 /**
 Author: Justin Halvorson.
 Description: this program implements Quicksort without using recursion.
-
 */
 
 #include <iostream>
@@ -10,34 +9,39 @@ Description: this program implements Quicksort without using recursion.
 using namespace std;
 
 
-
-struct LHslice{ //Low High slice
+// This struct stores the slice of an array. 
+// Low stores the index to the low pointer of the slice.
+// High stores the index to the high pointer of the slice.
+struct LHslice{ 
     int low;
     int high;
 };
+
 //Lomuto Partition Algorithm
+// This algoritm will parition the array.
 int partition(vector<int> &arr, int low, int high) {
+    //The pivot element is the high element.
     int pivot = arr[high];
     
-  
+    //set the current index i to one less than the current low. This is becuase i will be incremented before swaping.
     int i = low - 1;
     for (int j = low; j < high; j++) {
-    
-      
         if (arr[j] < pivot) {
             i++;
             swap(arr[i], arr[j]);
       }
   }
-    
-    
+  //swap the pivot with the correct location.
     swap(arr[i + 1], arr[high]);
 
+  //return the index of the pivot.
     return i + 1;
 }
 
+//main sort function.
 void noReqQuickSort(vector<int> &arr){
-    if(!arr.empty()){
+    //check to see if the vector is empty. If it's empty no 
+    if(!arr.empty()){ 
         stack<LHslice> partStack;
 
         int  high = arr.size() - 1;
@@ -61,8 +65,6 @@ void noReqQuickSort(vector<int> &arr){
                 temp = {pivotIndex + 1, high};
                 partStack.push(temp);
             }
-
-        
 
     }
 
