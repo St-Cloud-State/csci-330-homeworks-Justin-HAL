@@ -26,6 +26,17 @@
     res); return res
   )
  
+ ;this function will be recusivly called to insert unsorted elements into the sorted list.
+(defun insertion-helper (sorted unsorted)
+  (if unsorted ;if there are still elements in unsorted
+
+      ; Then insert an element into sorted and 
+    (insertion-helper (insert sorted (car unsorted)) (cdr unsorted))
+
+    ;else return the sorted list.
+    sorted)
+
+  )
 
 ;Main insert-sort function
 (defun insertion-sort (L)
@@ -36,14 +47,11 @@
             (sorted (list (car L))) ;first element is added to the sorted list, as a list of one is sorted.
             (unsorted (cdr L)) ; unsorted is defined to be the rest of the list as the first element is removed.
           )
-      (loop while unsorted ;while unsorted is not empty
-            do (progn 
-              (setq sorted (insert sorted (car unsorted))) ;insert the first element of the unsorted List into the sorted list.
-              (setq unsorted (cdr unsorted)) ;remove the first element of the unsorted list.
-            ))
+            (setq sorted (insertion-helper sorted unsorted))
       sorted) ; return sorted list.
     )
-        
+
+
 ;commands to use to test
 ; (insertion-sort '(2 4 6 1 5 3))
 ; (insertion-sort '(1 2 3 4 5 6))

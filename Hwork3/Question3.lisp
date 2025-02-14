@@ -45,8 +45,7 @@
 (defun sort-bottom-up-helper (L)
         ;while there is more than one element(list) in L.
         (loop while(< 1 (length L))
-            do( 
-                if (listp (car L))  ;checks to see if the first element of L is a list.
+            do( if (listp (car L))  ;checks to see if the first element of L is a list.
                 ;if the first element of L is a list:
                 (setq L (append (part-list L)   (sort-bottom-up-helper (cdr(cdr L))))) ;merge adjacent lists together
                 ;if the first element of L is a symbol (not a list)

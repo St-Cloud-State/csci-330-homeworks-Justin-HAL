@@ -6,6 +6,13 @@
 (defun part-left (L)
     (ldiff L (part-right L)) 
 )
+
+(defun partition (L)
+  (if (> (length L) 1)
+  (list (part-left L) (part-right L) )
+  (list L)
+  )
+)
 ;///////////////////////////////////////////////////////
 
 
@@ -38,11 +45,12 @@
 
 ;main mergesort function. 
 (defun merge-sort (L)
-  (if (or (null L) (null (cdr L))) ;if the list is empty, or if there is obly one element in the list.
+  (if (or (null L) (null (cdr L))) ;if the list is empty, or if there is only one element in the list.
       L ;return the list
+      
       ;else partition the list and merge the two halfs.
-      (let ((left (part-left L)) (right (part-right L)))
-        (merge-lists (merge-sort left) (merge-sort right))
+      (let ((part (partition L)))
+        (merge-lists (merge-sort (first part)) (merge-sort (second part)))
         )))
 
 ;commands to use to test
@@ -56,3 +64,5 @@
 ; (merge-sort '(-3 -1 -2 -5 -4))
 ; (merge-sort '(3 -1 2 -5 4 -2))
 ; (merge-sort '(3 1 2 3 4 2 1))
+
+;(let ((left (part-left L)) (right (part-right L)))
