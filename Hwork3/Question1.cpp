@@ -1,8 +1,3 @@
-/**
-Author: Justin Halvorson.
-Description: this program implements Quicksort without using recursion.
-*/
-
 #include <iostream>
 #include <stack>
 using namespace std;
@@ -53,7 +48,7 @@ void noReqQuickSort(int *arr, int size){
         //add the slice to the stack
         partStack.push(foo);
 
-        while (!partStack.empty()){ //while the stack containing partitions to be sorted is not emepty.
+        while (!partStack.empty()){ //while the stack containing partitions to be sorted is not empty.
             LHslice temp;
             //get the slice
             int low = partStack.top().low;
@@ -67,8 +62,9 @@ void noReqQuickSort(int *arr, int size){
                 partStack.push(temp);
             }
 
-            if (pivotIndex < high){ //if the high pointer is graeter than the pivot index (a.k.a they are not the same index)
+            if (pivotIndex < high){ //if the high pointer is greater than the pivot index (a.k.a they are not the same index)
                 temp = {pivotIndex + 1, high}; //create a new slice that is to the right of the partition.
+                partStack.push(temp); // Push the right slice back onto the stack
             }
         }
     }

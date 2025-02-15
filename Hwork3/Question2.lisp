@@ -18,30 +18,14 @@
 
 ;This function is used to merge two lists together
 ;The function takes two inputs, L1 L2 which should be lists.
-(defun merge-lists (L1 L2)
-  (let ((res ())) ; return variable, the sorted merged list.
-
-    ;This loop will merge two lists while both lists are not empty.
-    (loop while (and L1 L2)
-          do (if (< (car L1) (car L2)) ;if the first element of L1 is less than the first element of L2
-          ; If true ///////////////////////////////////////
-                 (progn 
-                 (setq res (append res (list (car L1))))  ;add the first element of L1 to the result or sorted list.
-                 (setq L1 (cdr L1))) ;remove the first element from L1
-          ;///////////////////////////////////////////////////////
-
-            ;if false////////////////////////////////////////
-                 (progn 
-                 (setq res (append res (list (car L2)))) ;add the first element of L2 to the result or sorted list.
-                 (setq L2 (cdr L2))))) ;remove the first element from L2
-          ;//////////////////////////////////////////
-
-    (if L1 ;if L1 still has elements in it.
-        ;Then append the rest of L1 to the end of Res
-        (setq res (append res L1))
-        ;else append the rest of L2 to the end of res.
-        (setq res (append res L2)))
-    res)) ;return the result.
+(defun merge-lists (list1 list2)
+  (cond
+    ((null list1) list2)
+    ((null list2) list1)
+    ((<= (car list1) (car list2))
+     (cons (car list1) (merge-lists (cdr list1) list2)))
+    (t
+     (cons (car list2) (merge-lists list1 (cdr list2))))))
 
 ;main mergesort function. 
 (defun merge-sort (L)
