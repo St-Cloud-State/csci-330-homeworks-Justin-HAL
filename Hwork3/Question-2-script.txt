@@ -1,5 +1,5 @@
-Script started on 2025-02-14 19:56:09+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="225" LINES="17"]
-[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --load Question2.lisp 
+Script started on 2025-02-17 15:06:15+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="225" LINES="16"]
+[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --load Question2.lisp
 This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
 More information about SBCL is available at <http://www.sbcl.org/>.
 
@@ -39,7 +39,7 @@ NIL
 (1 1 2 2 3 3 4)
 * ^Z
 [1]+  Stopped                 sbcl --load Question2.lisp
-[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ cat Question2.lisp 
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ cat Question2.lisp
 ; These two functions help partion a list into halves.
 (defun part-right (L)
     (last L (floor (/ (length L) 2)))
@@ -49,6 +49,8 @@ NIL
     (ldiff L (part-right L)) 
 )
 
+;main partiton function.
+;The above two functions are used to keep the code more simple.
 (defun partition (L)
   (if (> (length L) 1)
   (list (part-left L) (part-right L) )
@@ -60,30 +62,15 @@ NIL
 
 ;This function is used to merge two lists together
 ;The function takes two inputs, L1 L2 which should be lists.
-(defun merge-lists (L1 L2)
-  (let ((res ())) ; return variable, the sorted merged list.
+(defun merge-lists (list1 list2)
+  (cond
+    ((null list1) list2) ;if list1 is empty (null) then return list2
+    ((null list2) list1) ;if list2 is empty (null) then return list 1
 
-    ;This loop will merge two lists while both lists are not empty.
-    (loop while (and L1 L2)
-          do (if (< (car L1) (car L2)) ;if the first element of L1 is less than the first element of L2
-          ; If true ///////////////////////////////////////
-                 (progn 
-                 (setq res (append res (list (car L1))))  ;add the first element of L1 to the result or sorted list.
-                 (setq L1 (cdr L1))) ;remove the first element from L1
-          ;///////////////////////////////////////////////////////
-
-            ;if false////////////////////////////////////////
-                 (progn 
-                 (setq res (append res (list (car L2)))) ;add the first element of L2 to the result or sorted list.
-                 (setq L2 (cdr L2))))) ;remove the first element from L2
-          ;//////////////////////////////////////////
-
-    (if L1 ;if L1 still has elements in it.
-        ;Then append the rest of L1 to the end of Res
-        (setq res (append res L1))
-        ;else append the rest of L2 to the end of res.
-        (setq res (append res L2)))
-    res)) ;return the result.
+    ((<= (car list1) (car list2)) ;since list1 and list2 are not empty, if the first element of list 1 is less than the first of list 2.
+     (cons (car list1) (merge-lists (cdr list1) list2))) ;return the list were the first element of list 1 and the rest of the merged elements.
+    (t
+     (cons (car list2) (merge-lists list1 (cdr list2)))))); else, return the list were the first element of list 2 and the rest of the merged elements.
 
 ;main mergesort function. 
 (defun merge-sort (L)
@@ -107,10 +94,10 @@ NIL
 ; (merge-sort '(3 -1 2 -5 4 -2))
 ; (merge-sort '(3 1 2 3 4 2 1))
 
-;(let ((left (part-left L)) (right (part-right L)))[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
+[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
 exit
 There are stopped jobs.
 [0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
 exit
 
-Script done on 2025-02-14 19:57:35+00:00 [COMMAND_EXIT_CODE="1"]
+Script done on 2025-02-17 15:07:58+00:00 [COMMAND_EXIT_CODE="1"]
