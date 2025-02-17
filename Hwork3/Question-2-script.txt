@@ -1,45 +1,5 @@
-Script started on 2025-02-17 15:06:15+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="225" LINES="16"]
-[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --load Question2.lisp
-This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
-More information about SBCL is available at <http://www.sbcl.org/>.
-
-SBCL is free software, provided as is, with absolutely no warranty.
-It is mostly in the public domain; some portions are provided under
-BSD-style licenses.  See the CREDITS and COPYING files in the
-distribution for more information.
-* (merge-sort '(2 4 6 1 5 3))
-
-(1 2 3 4 5 6)
-* (merge-sort '(1 2 3 4 5 6))
-
-(1 2 3 4 5 6)
-* (merge-sort '(6 5 4 3 2 1))
-
-(1 2 3 4 5 6)
-* (merge-sort '(5 5 5 5 5 5))
-
-(5 5 5 5 5 5)
-* (merge-sort '(1))
-
-(1)
-* (merge-sort '())
-
-NIL
-* (merge-sort '(10 7 8 9 1 5 3 6 2 4))
-
-(1 2 3 4 5 6 7 8 9 10)
-* (merge-sort '(-3 -1 -2 -5 -4))
-
-(-5 -4 -3 -2 -1)
-* (merge-sort '(3 -1 2 -5 4 -2))
-
-(-5 -2 -1 2 3 4)
-* (merge-sort '(3 1 2 3 4 2 1))
-
-(1 1 2 2 3 3 4)
-* ^Z
-[1]+  Stopped                 sbcl --load Question2.lisp
-[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ cat Question2.lisp
+Script started on 2025-02-17 16:02:42+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="225" LINES="17"]
+[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ cat Question2.lisp 
 ; These two functions help partion a list into halves.
 (defun part-right (L)
     (last L (floor (/ (length L) 2)))
@@ -94,10 +54,50 @@ NIL
 ; (merge-sort '(3 -1 2 -5 4 -2))
 ; (merge-sort '(3 1 2 3 4 2 1))
 
-[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
+[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ sbcl --load Question2.lisp 
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (merge-sort '(2 4 6 1 5 3))
+
+(1 2 3 4 5 6)
+* (merge-sort '(1 2 3 4 5 6))
+
+(1 2 3 4 5 6)
+* (merge-sort '(6 5 4 3 2 1))
+
+(1 2 3 4 5 6)
+* (merge-sort '(5 5 5 5 5 5))
+
+(5 5 5 5 5 5)
+* (merge-sort '(1))
+
+(1)
+* (merge-sort '())
+
+NIL
+* (merge-sort '(10 7 8 9 1 5 3 6 2 4))
+
+(1 2 3 4 5 6 7 8 9 10)
+* (merge-sort '(-3 -1 -2 -5 -4))
+
+(-5 -4 -3 -2 -1)
+* (merge-sort '(3 -1 2 -5 4 -2))
+
+(-5 -2 -1 2 3 4)
+* (merge-sort '(3 1 2 3 4 2 1))
+
+(1 1 2 2 3 3 4)
+* ex  ^Z
+[1]+  Stopped                 sbcl --load Question2.lisp
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
 exit
 There are stopped jobs.
 [0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork3 [0;36m([1;31mmain[0;36m) [0m$ exit
 exit
 
-Script done on 2025-02-17 15:07:58+00:00 [COMMAND_EXIT_CODE="1"]
+Script done on 2025-02-17 16:04:10+00:00 [COMMAND_EXIT_CODE="1"]
