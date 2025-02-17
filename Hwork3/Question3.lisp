@@ -57,7 +57,7 @@
         ;if the first element of L is a list:
         (setq L (append (part-list L)   (sort-bottom-up-helper (cdr(cdr L))))) ;merge adjacent lists together
         ;if the first element of L is a symbol (not a list)
-        (setq L (append (part-sym L) (sort-bottom-up-helper(cdr (cdr L)))))) ;merge adh=jacent symbols
+        (setq L (append (part-sym L) (sort-bottom-up-helper(cdr (cdr L)))))) ;merge adjacent symbols
             
      (if (< 1 (length L)) ; check to see if process is done, when the merging is done there should only be one element in L
         (merge-sort L) ; if there are more elements, then repeat the process.
@@ -77,4 +77,4 @@
 ; (merge-sort '(10 7 8 9 1 5 3 6 2 4))
 ;(merge-sort '(-3 -1 -2 -5 -4))
 ; (merge-sort '(3 -1 2 -5 4 -2))
-; (rt '(merge-so3 1 2 3 4 2 1))
+; (merge-sort '(3 1 2 3 4 2 1))
