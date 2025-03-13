@@ -6,8 +6,12 @@
 )
 
 (defun IPfn (list)
-    (print '( in IPfn)) (print list)
-)
+  (print '(in IPfn)) 
+  (print list)
+  (cond 
+    ((null list) list)  ; If the list is empty, return it
+    ((eql (car list) 'e) (Sfn (cdr list)))  ; If first element is 'e, call Sfn on (cdr list)
+    (t 'error)))  ; Otherwise, return 'error
 
 (defun Efn (list)
     (print '( in Efn)) (print list)
@@ -53,12 +57,15 @@
   (print list)
   (cond 
     ((eql (car list) 's) (LPfn (cdr list)))  ; If first element is 's, call LPfn
-    (t '(error))))                           ; Otherwise, return '(error
+    (t '(error))))                           ; Otherwise, return '(error)
 
 (defun LPfn (list)
-    (print '( in LPfn)) 
-    (print list)
-(cond 
-    ((eql (car list) 's) (Lfn (list)))  ; If first element is 's, call LPfn
-    (t list))
-)
+  (print '(in LPfn)) 
+  (print list)
+  (cond 
+    ((eql (car list) 's) (Lfn list))  ; recursive call to Lfn
+    (t list)))                         ; Otherwise, return the list as is
+
+    ; test cases:
+    ;(Ifn '(i x o y s))
+    ;(Ifn '(i x o y o w d s s b e s))
