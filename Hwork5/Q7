@@ -1,0 +1,483 @@
+Script started on 2025-03-16 16:03:30+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="208" LINES="17"]
+[0;32m@Justin-HAL [0m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork5 [0;36m([1;31mmain[0;36m) [0m$ sbcl --load main.lisp
+This is SBCL 1.4.3, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+
+; file: /workspaces/csci-330-homeworks-Justin-HAL/Hwork5/main.lisp
+; in: DEFUN IFN
+;     (EFN (CDR LIST))
+; 
+; caught STYLE-WARNING:
+;   undefined function: EFN
+
+;     (IPFN (SFN (EFN (CDR LIST))))
+; 
+; caught STYLE-WARNING:
+;   undefined function: IPFN
+
+;     (SFN (EFN (CDR LIST)))
+; 
+; caught STYLE-WARNING:
+;   undefined function: SFN
+; 
+; compilation unit finished
+;   Undefined functions:
+;     EFN IPFN SFN
+;   caught 3 STYLE-WARNING conditions
+
+; file: /workspaces/csci-330-homeworks-Justin-HAL/Hwork5/main.lisp
+; in: DEFUN IPFN
+;     (SFN (CDR LIST))
+; 
+; caught STYLE-WARNING:
+;   undefined function: SFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     SFN
+;   caught 1 STYLE-WARNING condition
+
+; file: /workspaces/csci-330-homeworks-Justin-HAL/Hwork5/main.lisp
+; in: DEFUN EFN
+;     (EPFN (GFN LIST))
+; 
+; caught STYLE-WARNING:
+;   undefined function: EPFN
+
+;     (GFN LIST)
+; 
+; caught STYLE-WARNING:
+;   undefined function: GFN
+; 
+; compilation unit finished
+;   Undefined functions:
+;     EPFN GFN
+;   caught 2 STYLE-WARNING conditions
+
+; file: /workspaces/csci-330-homeworks-Justin-HAL/Hwork5/main.lisp
+; in: DEFUN SFN
+;     (LFN (CDR LIST))
+; 
+; caught STYLE-WARNING:
+;   undefined function: LFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     LFN
+;   caught 1 STYLE-WARNING condition
+
+; file: /workspaces/csci-330-homeworks-Justin-HAL/Hwork5/main.lisp
+; in: DEFUN LFN
+;     (LPFN (CDR LIST))
+; 
+; caught STYLE-WARNING:
+;   undefined function: LPFN
+; 
+; compilation unit finished
+;   Undefined function:
+;     LPFN
+;   caught 1 STYLE-WARNING condition
+* '(Valid strings)
+
+(VALID STRINGS)
+* (Ifn '(i x o y s))
+
+(IN IFN) 
+(I X O Y S) 
+(IN EFN) 
+(X O Y S) 
+(IN GFN) 
+(X O Y S) 
+(IN EPFN) 
+(O Y S) 
+(IN EFN) 
+(Y S) 
+(IN GFN) 
+(Y S) 
+(IN EPFN) 
+(S) 
+(IN SFN) 
+(S) 
+(IN IPFN) 
+NIL 
+NIL
+* (Ifn '(i x o y o w d s s b e s))
+
+(IN IFN) 
+(I X O Y O W D S S B E S) 
+(IN EFN) 
+(X O Y O W D S S B E S) 
+(IN GFN) 
+(X O Y O W D S S B E S) 
+(IN EPFN) 
+(O Y O W D S S B E S) 
+(IN EFN) 
+(Y O W D S S B E S) 
+(IN GFN) 
+(Y O W D S S B E S) 
+(IN EPFN) 
+(O W D S S B E S) 
+(IN EFN) 
+(W D S S B E S) 
+(IN GFN) 
+(W D S S B E S) 
+(IN EPFN) 
+(D S S B E S) 
+(IN SFN) 
+(D S S B E S) 
+(IN LFN) 
+(S S B E S) 
+(IN LPFN) 
+(S B E S) 
+(IN LFN) 
+(S B E S) 
+(IN LPFN) 
+(B E S) 
+(IN IPFN) 
+(E S) 
+(IN SFN) 
+(S) 
+NIL
+* (Ifn '(i z o w o w s))
+
+(IN IFN) 
+(I Z O W O W S) 
+(IN EFN) 
+(Z O W O W S) 
+(IN GFN) 
+(Z O W O W S) 
+(IN EPFN) 
+(O W O W S) 
+(IN EFN) 
+(W O W S) 
+(IN GFN) 
+(W O W S) 
+(IN EPFN) 
+(O W S) 
+(IN EFN) 
+(W S) 
+(IN GFN) 
+(W S) 
+(IN EPFN) 
+(S) 
+(IN SFN) 
+(S) 
+(IN IPFN) 
+NIL 
+NIL
+* (Ifn '(i x o w d s s s b e d s b))
+
+(IN IFN) 
+(I X O W D S S S B E D S B) 
+(IN EFN) 
+(X O W D S S S B E D S B) 
+(IN GFN) 
+(X O W D S S S B E D S B) 
+(IN EPFN) 
+(O W D S S S B E D S B) 
+(IN EFN) 
+(W D S S S B E D S B) 
+(IN GFN) 
+(W D S S S B E D S B) 
+(IN EPFN) 
+(D S S S B E D S B) 
+(IN SFN) 
+(D S S S B E D S B) 
+(IN LFN) 
+(S S S B E D S B) 
+(IN LPFN) 
+(S S B E D S B) 
+(IN LFN) 
+(S S B E D S B) 
+(IN LPFN) 
+(S B E D S B) 
+(IN LFN) 
+(S B E D S B) 
+(IN LPFN) 
+(B E D S B) 
+(IN IPFN) 
+(E D S B) 
+(IN SFN) 
+(D S B) 
+(IN LFN) 
+(S B) 
+(IN LPFN) 
+(B) 
+NIL
+* (Ifn '(i w d s s s s s s s b))
+
+(IN IFN) 
+(I W D S S S S S S S B) 
+(IN EFN) 
+(W D S S S S S S S B) 
+(IN GFN) 
+(W D S S S S S S S B) 
+(IN EPFN) 
+(D S S S S S S S B) 
+(IN SFN) 
+(D S S S S S S S B) 
+(IN LFN) 
+(S S S S S S S B) 
+(IN LPFN) 
+(S S S S S S B) 
+(IN LFN) 
+(S S S S S S B) 
+(IN LPFN) 
+(S S S S S B) 
+(IN LFN) 
+(S S S S S B) 
+(IN LPFN) 
+(S S S S B) 
+(IN LFN) 
+(S S S S B) 
+(IN LPFN) 
+(S S S B) 
+(IN LFN) 
+(S S S B) 
+(IN LPFN) 
+(S S B) 
+(IN LFN) 
+(S S B) 
+(IN LPFN) 
+(S B) 
+(IN LFN) 
+(S B) 
+(IN LPFN) 
+(B) 
+(IN IPFN) 
+NIL 
+NIL
+* (Ifn '(i w o z s e s))(Ifn '(i w o z s e s))                      
+
+(IN IFN) 
+(I W O Z S E S) 
+(IN EFN) 
+(W O Z S E S) 
+(IN GFN) 
+(W O Z S E S) 
+(IN EPFN) 
+(O Z S E S) 
+(IN EFN) 
+(Z S E S) 
+(IN GFN) 
+(Z S E S) 
+(IN EPFN) 
+(S E S) 
+(IN SFN) 
+(S E S) 
+(IN IPFN) 
+(E S) 
+(IN SFN) 
+(S) 
+NIL
+* (Ifn '(i x o x o x o x o x s))
+
+(IN IFN) 
+(I X O X O X O X O X S) 
+(IN EFN) 
+(X O X O X O X O X S) 
+(IN GFN) 
+(X O X O X O X O X S) 
+(IN EPFN) 
+(O X O X O X O X S) 
+(IN EFN) 
+(X O X O X O X S) 
+(IN GFN) 
+(X O X O X O X S) 
+(IN EPFN) 
+(O X O X O X S) 
+(IN EFN) 
+(X O X O X S) 
+(IN GFN) 
+(X O X O X S) 
+(IN EPFN) 
+(O X O X S) 
+(IN EFN) 
+(X O X S) 
+(IN GFN) 
+(X O X S) 
+(IN EPFN) 
+(O X S) 
+(IN EFN) 
+(X S) 
+(IN GFN) 
+(X S) 
+(IN EPFN) 
+(S) 
+(IN SFN) 
+(S) 
+(IN IPFN) 
+NIL 
+NIL
+* '(Invalid strings)
+
+(INVALID STRINGS)
+* (Ifn '(o x o y s))
+
+(IN IFN) 
+(O X O Y S) 
+(ERROR) 
+(ERROR)
+* (Ifn '(i x x y o w d s s b e s))
+
+(IN IFN) 
+(I X X Y O W D S S B E S) 
+(IN EFN) 
+(X X Y O W D S S B E S) 
+(IN GFN) 
+(X X Y O W D S S B E S) 
+(IN EPFN) 
+(X Y O W D S S B E S) 
+(IN SFN) 
+(X Y O W D S S B E S) 
+(IN IPFN) 
+(ERROR) 
+ERROR
+* (Ifn '(i s o w o w s))
+
+(IN IFN) 
+(I S O W O W S) 
+(IN EFN) 
+(S O W O W S) 
+(IN GFN) 
+(S O W O W S) 
+(IN EPFN) 
+(ERROR) 
+(IN SFN) 
+(ERROR) 
+(IN IPFN) 
+(ERROR) 
+ERROR
+* (Ifn '(i x o w d s s s e d s b))
+
+(IN IFN) 
+(I X O W D S S S E D S B) 
+(IN EFN) 
+(X O W D S S S E D S B) 
+(IN GFN) 
+(X O W D S S S E D S B) 
+(IN EPFN) 
+(O W D S S S E D S B) 
+(IN EFN) 
+(W D S S S E D S B) 
+(IN GFN) 
+(W D S S S E D S B) 
+(IN EPFN) 
+(D S S S E D S B) 
+(IN SFN) 
+(D S S S E D S B) 
+(IN LFN) 
+(S S S E D S B) 
+(IN LPFN) 
+(S S E D S B) 
+(IN LFN) 
+(S S E D S B) 
+(IN LPFN) 
+(S E D S B) 
+(IN LFN) 
+(S E D S B) 
+(IN LPFN) 
+(E D S B) 
+(IN IPFN) 
+(S S S E D S B ERR) 
+ERROR
+* (Ifn '(i w s s s s s s s b))
+
+(IN IFN) 
+(I W S S S S S S S B) 
+(IN EFN) 
+(W S S S S S S S B) 
+(IN GFN) 
+(W S S S S S S S B) 
+(IN EPFN) 
+(S S S S S S S B) 
+(IN SFN) 
+(S S S S S S S B) 
+(IN IPFN) 
+(S S S S S S B) 
+ERROR
+* (Ifn '(i w z s e s))
+
+(IN IFN) 
+(I W Z S E S) 
+(IN EFN) 
+(W Z S E S) 
+(IN GFN) 
+(W Z S E S) 
+(IN EPFN) 
+(Z S E S) 
+(IN SFN) 
+(Z S E S) 
+(IN IPFN) 
+(ERROR) 
+ERROR
+* (Ifn '(i w z s e s))
+
+(IN IFN) 
+(I W Z S E S) 
+(IN EFN) 
+(W Z S E S) 
+(IN GFN) 
+(W Z S E S) 
+(IN EPFN) 
+(Z S E S) 
+(IN SFN) 
+(Z S E S) 
+(IN IPFN) 
+(ERROR) 
+ERROR
+* (Ifn '(i w z s e s))                    (Ifn '(i x o x o x o x o x d))
+
+(IN IFN) 
+(I X O X O X O X O X D) 
+(IN EFN) 
+(X O X O X O X O X D) 
+(IN GFN) 
+(X O X O X O X O X D) 
+(IN EPFN) 
+(O X O X O X O X D) 
+(IN EFN) 
+(X O X O X O X D) 
+(IN GFN) 
+(X O X O X O X D) 
+(IN EPFN) 
+(O X O X O X D) 
+(IN EFN) 
+(X O X O X D) 
+(IN GFN) 
+(X O X O X D) 
+(IN EPFN) 
+(O X O X D) 
+(IN EFN) 
+(X O X D) 
+(IN GFN) 
+(X O X D) 
+(IN EPFN) 
+(O X D) 
+(IN EFN) 
+(X D) 
+(IN GFN) 
+(X D) 
+(IN EPFN) 
+(D) 
+(IN SFN) 
+(D) 
+(IN LFN) 
+NIL 
+(IN IPFN) 
+(ERR) 
+ERROR
+* ^Z
+[1]+  Stopped                 sbcl --load main.lisp
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork5 [0;36m([1;31mmain[0;36m) [0m$ e[Kexit
+exit
+There are stopped jobs.
+[0;32m@Justin-HAL [1;31m➜ [1;34m/workspaces/csci-330-homeworks-Justin-HAL/Hwork5 [0;36m([1;31mmain[0;36m) [0m$ exit
+exit
+
+Script done on 2025-03-16 16:12:27+00:00 [COMMAND_EXIT_CODE="1"]
